@@ -1,0 +1,63 @@
+<html>
+    <head>
+        
+        
+        
+    </head>
+    <body>
+        <center>
+			<h1>Online Calculator</h1>
+        	<h3>Addition, Subtraction, Multiplication, Division</h3>
+			<br/>
+			<h2 id="output"><u>Result</u></h2>
+			<br/>
+				<select id="op" required>
+					<option value="add">Addition</option>
+					<option value="sub">Subtraction</option>
+					<option value="multi">Multiplication</option>
+					<option value="div">Division</option>
+				</select>
+				<br/>
+				<br/>
+				<input type="number" id="x" placeholder="x value" required/>
+				<input type="number" id="y" placeholder="y value" required/>
+				<br/>
+				<br/>
+				<button id="go" onclick="basic()">Submit</button>
+				<br/>
+				<hr>
+				<a href="index.html">Basic Operations</a>
+				<a href="singlevar.html">Single Value Operations</a>
+				<a href="about.html">About</a>
+        </center>
+    </body>
+	<script type="application/javascript">
+		
+		function basic() {
+			var op = document.getElementById("op").value
+			var x = document.getElementById("x").value
+			var y = document.getElementById("y").value
+			var result
+			
+			x = parseFloat(x)
+			y = parseFloat(y)
+			
+			switch (op) {
+				case "add":
+					result = x + y
+					break
+				case "sub":
+					result = x - y
+					break
+				case "multi":
+					result = x * y
+					break
+				case "div":
+					result = x / y
+			}
+			
+			document.getElementById('output').innerHTML = result
+		}
+	</script>
+	<!-- Hi Sir Luweh! - Leroy Bulaong -->
+</html>

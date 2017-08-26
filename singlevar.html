@@ -1,0 +1,78 @@
+<html>
+    <head>
+        
+        
+        
+    </head>
+    <body>
+        <center>
+			<h1>Online Calculator</h1>
+        	<h3>Square, Cube, Square root, Cube Root, Odd or Even?</h3>
+			<br/>
+			<h2 id="output"><u>Result</u></h2>
+			<br/>
+				<select id="op" required>
+					<option value="sqr">Square</option>
+					<option value="cbe">Cube</option>
+					<option value="sqrt">Square root</option>
+					<option value="cbrt">Cube root</option>
+					<option value="odd">Is it Odd?</option>
+					<option value="even">Is it Even?</option>
+				</select>
+				<br/>
+				<br/>
+				<input type="number" id="x" placeholder="x value" required/>
+				<br/>
+				<br/>
+				<button id="go" onclick="single()">Submit</button>
+				<br/>
+				<hr>
+				<a href="index.html">Basic Operations</a>
+				<a href="singlevar.html">Single Value Operations</a>
+				<a href="about.html">About</a>
+        </center>
+    </body>
+	<script type="application/javascript">
+		
+		function single() {
+			var op = document.getElementById("op").value
+			var x = document.getElementById("x").value
+			var result
+			
+			x = parseFloat(x)
+			
+			switch (op) {
+				case "sqr":
+					result = x * x
+					break
+				case "cbe":
+					result = x * x * x
+					break
+				case "sqrt":
+					result = Math.sqrt(x)
+					break
+				case "cbrt":
+					result = Math.cbrt(x)
+					break
+				case "odd":
+					result = x % 2
+					if (result == 0) {
+						result = "No (" + x + ")"
+					} else {
+						result = "Yes (" + x + ")"
+					}
+					break
+				case "even":
+					result = x % 2
+					if (result != 0) {
+						result = "No (" + x + ")"
+					} else {
+						result = "Yes (" + x + ")"
+					}
+			}
+			
+			document.getElementById('output').innerHTML = result
+		}
+	</script>
+	<!-- Hi Sir Luweh! - Leroy Bulaong -->
+</html>
